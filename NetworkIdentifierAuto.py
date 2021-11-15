@@ -1,7 +1,5 @@
 import subprocess
 
-print("Hi Braden")
-
 def choose_network (security_type, available_networks):
     types_of_security = ["Open", "WPA2-Personal", "WPA2-Enterprise"]
     for i in range(0, len(types_of_security)):

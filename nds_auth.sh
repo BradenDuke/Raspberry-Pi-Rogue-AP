@@ -44,11 +44,9 @@ if [ $action == "auth_client" ]; then
        useragent=$(printf "${useragent_enc//%/\\x}")
 
        # Append to the log.
-
-       echo "$date, method=$1, clientmac=$2, clientip=$7, username=$3, password=$4, redir=$redir, useragent=$useragent" >> /tmp/binauth.log
+       printf "$date\n method=$1\n clientmac=$2\n clientip=$7\n username=$3\n password=$4\n redir=$redir\n useragent=$useragent" >> /tmp/binauth.log
 else
-       echo "action=$action" >> /tmp/binauth.log
-       echo "$date, method=$1, clientmac=$2, bytes_incoming=$3, bytes_outgoing=$4, session_start=$5, session_end=$6" >> /tmp/binauth.log
+       printf "$date\n method=$1\n clientmac=$2\n bytes_incoming=$3, bytes_outgoing=$4\n session_start=$5, session_end=$6\n---" >> /tmp/binauth.log
 fi
 
 
